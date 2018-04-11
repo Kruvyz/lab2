@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="content">
+      <h3>Назва: <%= task.name %></h3>
+
+      <% if (task.done === 'true') { %>
+        <h4>Стан: Bиконано </h4>
+      <% } else { %>
+        <h4>Стан: Не виконано </h4>
+      <% } %>
+
+      Деталі: <%= task.details %>
+    </div>
+  </body>
+</html>

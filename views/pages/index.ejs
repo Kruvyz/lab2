@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="content">
+    <div class="tasks">
+        <% for (task of tasks) { %>
+            <% if (task.done === 'true') { %>
+              <h4><s><%= task.name %></s></h4>
+            <% } else { %>
+              <h4><%= task.name %></h4>
+            <% } %>
+
+            <form method="POST" action="/edit/<%= task._id %>">
+              <input class="alert alert-dark" type="submit" value="Редагувати">
+            </form>
+            <form method="POST" action="/delete/<%= task._id %>">
+              <input class="alert alert-danger" type="submit" value="Видалити">
+            </form>
+            <form method="POST" action="/show/<%= task._id %>">
+              <input class="alert alert-dark" type="submit" value="Деталі">
+            </form>
+            <hr>
+        <% } %>
+
+  </div>
+
+  <div class="new_task">
+    <form method="POST" action="/new">
+      <label for="name">Назва: </label>
+      <input type="text" name="name" id="name"/>
+      <br>
+      <label>
+        Деталі:
+        <br><textarea rows="5" cols="25" name="details"> </textarea><br>
+      </label>
+      <input type="submit" value="Створити нову задачу" class="alert alert-warning" />
+    </form>
+  </div>
+</div>
+  </body>
+</html

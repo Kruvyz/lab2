@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="content">
+      <form method="post" action="/save/<%= task._id %>">
+        <label for="name">Назва: </label>
+        <input type="text" id="name" name="name" value = "<%= task.name %>" /><br>
+
+        <input type="radio" name="done" id="radio1" value="false" checked />
+        <label for="radio1">Не виконано</label><br>
+
+        <input type="radio" name="done" id="radio2" value="true" />
+        <label for="radio2">Bиконано</label><br>
+
+        <label>
+          Деталі:
+          <br>
+          <textarea cols="25" rows="5" name="details"><%= task.details %></textarea>
+        </label><br>
+
+        <input type="submit" value="Зберегти" />
+      </form>
+    </div>
+  </body>
+</html>
